@@ -25,12 +25,12 @@ func ExpenseCreate(c *gin.Context) {
 	date := c.Query("date")
 	split_method := c.Query("split_method")
 
-	var input ExpenseInput
+	// var input ExpenseInput
 
-	if err := c.ShouldBindJSON(&input); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-		return
-	}
+	// if err := c.ShouldBindJSON(&input); err != nil {
+	// 	c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+	// 	return
+	// }
 
 	u := models.Expenses{}
 
