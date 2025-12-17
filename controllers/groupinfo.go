@@ -17,12 +17,7 @@ type GroupInput struct {
 func CreateGroup(c *gin.Context) {
 	user_id := c.Query("id")
 	group_name := c.Query("groupName")
-	// var input GroupInput
 
-	// if err := c.ShouldBindJSON(&input); err != nil {
-	// 	c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-	// 	return
-	// }
 	u := models.Groupslist{}
 	u.CreatedByUserId = user_id
 	u.GroupName = group_name
