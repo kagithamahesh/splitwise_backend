@@ -17,10 +17,11 @@ type GroupInput struct {
 func CreateGroup(c *gin.Context) {
 	user_id := c.Query("id")
 	group_name := c.Query("groupName")
-
+	description := c.Query("description")
 	u := models.Groupslist{}
 	u.CreatedByUserId = user_id
 	u.GroupName = group_name
+	u.Description = description
 	_, err := u.SaveGroup()
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})

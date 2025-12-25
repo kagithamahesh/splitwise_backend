@@ -4,6 +4,7 @@ type Groupslist struct {
 	GroupId         uint   `gorm:"primarykey;column:group_id" json:"group_id"`
 	GroupName       string `gorm:"size:100;not null" json:"group_name"`
 	CreatedByUserId string `gorm:"size:100;not null" json:"created_by_user_id"`
+	Description     string `gorom:"size:150;"json:"description"`
 }
 
 func (g *Groupslist) SaveGroup() (*Groupslist, error) {
