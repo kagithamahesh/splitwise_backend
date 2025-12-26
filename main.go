@@ -27,7 +27,7 @@ func main() {
 		public.POST("/register", controllers.Register)
 		public.POST("/login", controllers.Login)
 	}
-
+	r.Static("/uploads", "./uploads")
 	protected := r.Group("/api/admin")
 	protected.Use(middlewares.JwtAuthMiddleware())
 	{

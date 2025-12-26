@@ -4,7 +4,13 @@ type Groupslist struct {
 	GroupId         uint   `gorm:"primarykey;column:group_id" json:"group_id"`
 	GroupName       string `gorm:"size:100;not null" json:"group_name"`
 	CreatedByUserId string `gorm:"size:100;not null" json:"created_by_user_id"`
-	Description     string `gorom:"size:150;"json:"description"`
+
+	Description string `gorm:"size:100" json:"description"`
+
+	ImageData []byte `gorm:"column:image_data;type:longblob" json:"-"`
+
+	// 👇 API-only field (NOT stored in DB)
+	ImageDataBase64 string `gorm:"-" json:"image_data"`
 }
 
 func (g *Groupslist) SaveGroup() (*Groupslist, error) {
