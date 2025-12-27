@@ -9,7 +9,7 @@ type Groupslist struct {
 
 	ImageData []byte `gorm:"column:image_data;type:longblob" json:"-"`
 
-	// 👇 API-only field (NOT stored in DB)
+	//  API-only field (NOT stored in DB)
 	ImageDataBase64 string `gorm:"-" json:"image_data"`
 }
 
